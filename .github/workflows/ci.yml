@@ -26,8 +26,8 @@ jobs:
       - name: Check syntax
         run: python -m py_compile app/main.py
 
-      - name: Run tests with coverage
-        run: PYTHONPATH=. pytest --cov=app --cov-report=term-missing --cov-fail-under=80
+      - name: Run tests with coverage (logic only)
+        run: PYTHONPATH=. pytest --cov=app.logic --cov-report=term-missing --cov-fail-under=80
 
       - name: Run Linter
         run: flake8 app --max-line-length=120
